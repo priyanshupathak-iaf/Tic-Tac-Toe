@@ -1,0 +1,88 @@
+:root {
+    --bg: #0f172a;
+    --text: #ffffff;
+    --box: rgba(255,255,255,0.1);
+}
+
+body.light {
+    --bg: #f1f5f9;
+    --text: #111;
+    --box: rgba(0,0,0,0.1);
+}
+
+/* Animated Background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #334155);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body.light {
+    background: linear-gradient(-45deg, #e2e8f0, #cbd5f5, #f8fafc, #dbeafe);
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: var(--box);
+    backdrop-filter: blur(10px);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle {
+    background: #22c55e;
+    color: white;
+}
+
+.reset {
+    background: #3b82f6;
+    color: white;
+}
+
+.status {
+    font-size: 18px;
+}
